@@ -1,0 +1,58 @@
+<h1>Tellme</h1>
+<h2>Simple and Anonymous Surveys</h2>
+<form #surveyForm="ngForm" novalidate>
+    <section>
+        <div class="box">
+            <h3>What's the survey?</h3>
+            <div *ngIf="name.invalid && submmited" class="errorValidation">
+                Title is required.
+            </div>
+            <input type="text" id="name" [(ngModel)] = "survey.name" name="name" placeholder="*Title" #name="ngModel" required>
+            <div *ngIf="description.invalid && submmited" class="errorValidation">
+                Question is required.
+            </div>
+            <textarea [(ngModel)] = "survey.description" id="description" name="description" cols="23" rows="3" placeholder="*Question" #description="ngModel" required></textarea>
+            <h3>Who will response anonymously?</h3>
+            <div *ngIf="emailRespondent.errors?.email && clickedRespondent" class="errorValidation">
+                Email is invalid.
+            </div>
+            <div *ngIf="emailRespondent.errors?.required && clickedRespondent" class="errorValidation">
+                Email is required.
+            </div>
+            <ng-form #respondentForm="ngForm" novalidate>
+                <input type="text" id="emailRespondent" name="emailRespondent" [(ngModel)]="newRespondent" placeholder="*Email" required email #emailRespondent="ngModel">
+                <span>We recommend 5 respondents. Min 2. Max 12.</span>
+                <div class="btAddRespondent">
+                    <button (click)="addRespondent(respondentForm)">+</button>
+                </div>
+            </ng-form>
+            <div *ngIf="submmited && invalrespondentIdsSize" class="errorValidation">
+                Min 2 and max 12 respondents.
+            </div>
+            <ul *ngFor = "let respondent of survey.respondents">
+                <li class="emailRespondents">{{ respondent.email }}</li>
+            </ul>
+            <h3>Who will receive the final results?</h3>
+            <div *ngIf="email.errors?.email && submmited" class="errorValidation">
+                Email is invalid.
+            </div>
+            <div *ngIf="email.errors?.required && submmited" class="errorValidation">
+                Email is required.
+            </div>
+            <input type="email" id="email" [(ngModel)] = "survey.email" name="email" placeholder="*Email" ngModel required email #email="ngModel">
+            <span>It'll contain all the anonymous responses.</span>
+        </div>
+    </section>
+    <div *ngIf="success" class="success">
+        <strong>Excellent! We email them.</strong>
+    </div>
+    <div *ngIf="error" class="error">
+        <strong>Oops! Something went wrong...</strong>
+    </div>
+    <div *ngIf="processing" class="processing">
+        <strong>Processing...</strong>
+    </div>
+    <section class="sectionCreate">
+        <button (click)="onSubmit(surveyForm)" [disabled]="processing" class="btCreate">Create</button>
+    </section>
+</form>

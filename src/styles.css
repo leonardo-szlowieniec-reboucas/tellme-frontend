@@ -1,0 +1,287 @@
+/* You can add global styles to this file, and also import other style files */
+html {
+    scroll-behavior: smooth;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    color: #222;
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Leckerli One', cursive;
+    font-weight: normal;
+    /* letter-spacing: -0.04em; */
+    /* line-height: 64px; */
+    color: #222;
+    font-size: 48px;
+    margin: 50px 0 0 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 300;
+    color: #222;
+    font-size: 16px;
+    margin: -5px 0 0 0;
+}
+
+.box {
+    width: 320px;
+    border: 1px solid #222;
+    box-sizing: border-box;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0 10px 35px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    margin: 0px 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none;
+    color: #222;
+    background-color: #ffcc00;
+    margin: 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 1.125rem;
+}
+
+button:hover {
+    background-color: #fada20;
+}
+
+.btAddRespondent {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 276px;
+}
+
+.btCreate {
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 10px 25px;
+}
+
+.sectionCreate {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.emailRespondents {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 276px;
+    margin: 0 0 10px 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 0.9rem;
+    color: #444;
+    padding: 0;
+}
+
+input {
+    width: 250px;
+    margin: 10px 10px 0px 10px;
+    padding: 10px 13px;
+    font-size: 0.9rem;
+    color: #444;
+    border: 0.7px #222 solid;
+    border-radius: 5px;
+}
+
+textarea {
+    width: 250px;
+    margin: 10px 10px 0 10px;
+    padding: 10px 13px;
+    font-size: 0.9rem;
+    color: #444;
+    border: 0.7px #222 solid;
+    border-radius: 5px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 35px 0 0 0;
+}
+
+h3 {
+    text-align: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    color: #222;
+    margin: 35px 0 10px 0;
+    /* margin-bottom: 25px; */
+}
+
+h4 {
+    text-align: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #808080;
+    /* margin-top: -25px; */
+    /* margin-bottom: 35px; */
+    margin: 25px 0 0 0;
+}
+
+h5 {
+    text-align: center;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    color: #222;
+    margin: 35px 0 20px 0;
+}
+
+::placeholder {
+    font-family: Roboto;
+    font-style: normal;
+    font-size: 12px;
+    color: #808080;
+    letter-spacing: 0.05rem;
+}
+
+span {
+    color: #909090;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0 5px 0;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-size: 0.70rem;
+    letter-spacing: 0.05rem;
+}
+
+.success {
+    color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 0 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.error {
+    color: #ff0000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 0 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.processing {
+    color: rgb(174, 154, 4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0 0 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
+.errorValidation {
+    color: #ff0000;
+    width: 270px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 0 -5px 0;
+    font-size: 0.8rem;
+    letter-spacing: 0.05rem;
+    font-family: 'Raleway', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+li {
+    float: left;
+    padding: 30px;
+    font-size: 1rem;
+}
+
+.answers li {
+    float: none;
+    margin: 0 30px 0 0;
+    padding: 0 0 0 30px;
+    background-image: url('assets/img/bullet-yellow.svg');
+    background-position: left 10px top 7px;
+    background-size: 9px 9px;
+    background-repeat: no-repeat;
+}
+
+.answers {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 298px;
+    margin: 0 0 35px 0;
+    font-family: 'Roboto Mono', monospace;
+    text-align: justify;
+    font-style: normal;
+    font-size: 12px;
+    color: #222;
+    /* line-height:150%; */
+}
+
+.answers:last-child {
+    margin: 0;
+}
+
+:disabled {
+    background-color: #f9c70076;
+}
+
+:disabled:hover {
+    cursor: default;
+    background-color: #f9c70076;
+}

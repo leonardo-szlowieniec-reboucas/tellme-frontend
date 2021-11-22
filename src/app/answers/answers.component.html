@@ -1,0 +1,12 @@
+<h1>Tellme</h1>
+<h2>Simple and Anonymous Surveys</h2>
+<section>
+    <div class="box">
+        <h4>{{survey.name}}</h4>
+        <h5>{{survey.description}}</h5>
+        <ul *ngFor = "let answer of answers" class="answers">
+            <li class="answer">{{ answer.description }}</li>
+        </ul>
+    </div>
+    <span>It's a compilation of anonymous responses.</span>
+</section>

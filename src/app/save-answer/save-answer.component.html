@@ -1,0 +1,24 @@
+<h1>Tellme</h1>
+<h2>Simple and Anonymous Surveys</h2>
+<form #answerForm="ngForm">
+    <section>
+        <div class="box">
+            <h4>{{survey.name}}</h4>
+            <h3>{{survey.description}}</h3>
+            <div *ngIf="description.invalid && description.touched" class="errorValidation">
+                Answer is required.
+            </div>
+            <textarea [(ngModel)] = "answer.description" [readonly]="success" id="description" name="description" cols="23" rows="5" placeholder="*Your response" #description="ngModel" required maxlength="100"></textarea>
+        </div>
+        <span>It'll be a complete anonymous response.</span>
+    </section>
+    <div *ngIf="success" id="success" class="success">
+        <strong>Thank you!</strong>
+    </div>
+    <div *ngIf="error" id="error" class="error">
+        <strong>Oops! Something went wrong...</strong>
+    </div>
+    <section class="sectionCreate">
+        <button (click)="onSubmit(answerForm)" [disabled]="success" class="btCreate">Answer</button>
+    </section>
+</form>
